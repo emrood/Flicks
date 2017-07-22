@@ -24,8 +24,8 @@ import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 /**
  * Created by Emmanuel Roodly on 19/07/2017.
  */
-public class filmsAdapter extends ArrayAdapter<Films>{
-    public filmsAdapter(Context context, List<Films> films) {
+public class filmsAdapterL extends ArrayAdapter<Films>{
+    public filmsAdapterL(Context context, List<Films> films) {
         super(context, android.R.layout.simple_list_item_1, films);
 
     }
@@ -71,14 +71,14 @@ public class filmsAdapter extends ArrayAdapter<Films>{
         tvOverview.setText(movie.getOverview());
         /*
         Configuration _newConfig = new Configuration();
-        if(_newConfig.orientation != Configuration.ORIENTATION_PORTRAIT){
+        if(_newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
             Picasso.with(getContext()).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(30, 30)).placeholder(R.drawable.plh).into(ivFilms);
         }
         else{
             Picasso.with(getContext()).load(movie.getBackdropPath()).transform(new RoundedCornersTransformation(5, 5)).placeholder(R.drawable.plh).into(ivFilms);
         }*/
-
-        Picasso.with(getContext()).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(30, 30)).placeholder(R.drawable.plh).into(ivFilms);
+        Picasso.with(getContext()).load(movie.getBackdropPath()).transform(new RoundedCornersTransformation(-15, -15)).placeholder(R.drawable.plh).into(ivFilms);
+        //Picasso.with(getContext()).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(30, 30)).placeholder(R.drawable.plh).into(ivFilms);
         return convertView;
     }
 

@@ -1,11 +1,15 @@
 package emrood.emmanuelroodly.flicksapp;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -19,6 +23,7 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 import emrood.emmanuelroodly.flicksapp.adapters.filmsAdapter;
+import emrood.emmanuelroodly.flicksapp.adapters.filmsAdapterL;
 import emrood.emmanuelroodly.flicksapp.models.Films;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Films> films;
     filmsAdapter myAdapter;
     ListView lvFilms;
-
+    filmsAdapterL myAdapter2;
+    JSONObject j;
+    int ot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +42,20 @@ public class MainActivity extends AppCompatActivity {
         lvFilms = (ListView) findViewById(R.id.lvFilms);
         films = new ArrayList<>();
         myAdapter = new filmsAdapter(this, films);
-        lvFilms.setAdapter(myAdapter);
+        myAdapter2 = new filmsAdapterL(this, films);
+        ot = getResources().getConfiguration().orientation;
+        if(ot == 1){
+            lvFilms.setAdapter(myAdapter);
+        }
+        if(ot == 2){
+            lvFilms.setAdapter(myAdapter2);
+        }
+
+
+        //lvFilms.setAdapter(myAdapter);
+
+
+
         String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new JsonHttpResponseHandler(){
@@ -46,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     filmJSONResults = response.getJSONArray("results");
                     myAdapter.notifyDataSetChanged();
+                    myAdapter2.notifyDataSetChanged();
                     films.addAll(Films.fromJSONArray(filmJSONResults));
                     Log.d("DEBUG", films.toString());
                     Toast.makeText(MainActivity.this, "Connection", Toast.LENGTH_SHORT).show();
@@ -65,5 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Connection echoue", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    public void onAdd(View view) {
+        Intent detail = new Intent(MainActivity.this, DetailActivity.class);
+        //detail.putExtra("films", films);
+        startActivity(detail);
     }
 }

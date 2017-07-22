@@ -36,10 +36,12 @@
         android:layout_height="wrap_content"
         tools:text="An Amazon princess comes to the world of Man to become the greatest of the female superheroes."
         android:id="@+id/tvOverview"
+        android:onClick="onAdd"
         android:layout_below="@+id/tvTitle"
         android:layout_toRightOf="@+id/ivFilms"
         android:layout_toEndOf="@+id/ivFilms"
         android:textColor="@android:color/background_light"
         android:layout_margin="5dp"
         android:paddingLeft="10dp" />
+
 </RelativeLayout>

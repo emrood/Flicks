@@ -16,5 +16,6 @@
         android:id="@+id/lvFilms"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        android:dividerHeight="25.0sp"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

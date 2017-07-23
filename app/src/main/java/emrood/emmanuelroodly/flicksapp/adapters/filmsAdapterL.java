@@ -77,7 +77,7 @@ public class filmsAdapterL extends ArrayAdapter<Films>{
         else{
             Picasso.with(getContext()).load(movie.getBackdropPath()).transform(new RoundedCornersTransformation(5, 5)).placeholder(R.drawable.plh).into(ivFilms);
         }*/
-        Picasso.with(getContext()).load(movie.getBackdropPath()).transform(new RoundedCornersTransformation(-15, -15)).placeholder(R.drawable.plh).into(ivFilms);
+        Picasso.with(getContext()).load(movie.getBackdropPath()).transform(new RoundedCornersTransformation(30,30)).placeholder(R.drawable.plh).into(ivFilms);
         //Picasso.with(getContext()).load(movie.getPosterPath()).transform(new RoundedCornersTransformation(30, 30)).placeholder(R.drawable.plh).into(ivFilms);
         return convertView;
     }

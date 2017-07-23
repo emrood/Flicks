@@ -53,10 +53,25 @@ public class MainActivity extends AppCompatActivity {
 
 
         //lvFilms.setAdapter(myAdapter);
+        lvFilms.setOnItemClickListener(new ListView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Films movie = (Films) lvFilms.getItemAtPosition(position);
+                Intent detail = new Intent(MainActivity.this, DetailActivity.class);
+                detail.putExtra("films", movie);
+                startActivity(detail);
 
+            }
+        });
 
+        fetchMoviewAsync();
+        //getVideoId();
 
+    }
+
+    public void fetchMoviewAsync() {
         String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new JsonHttpResponseHandler(){
             @Override
@@ -88,10 +103,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    /*
+    String videoKey;
+    public String getVideoId(){
+        AsyncHttpClient client = new AsyncHttpClient();
 
-    public void onAdd(View view) {
-        Intent detail = new Intent(MainActivity.this, DetailActivity.class);
-        //detail.putExtra("films", films);
-        startActivity(detail);
+        //String url2 = "https://api.themoviedb.org/3/movie/" + Films.getMovieId() + "/videos?api_key=AIzaSyCAqCSOu46rdDj3MFvh8LvHJNgruPuTee4";
+        String url2 = "https://api.themoviedb.org/3/movie/209112/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+        client.get(url2, new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Toast.makeText(MainActivity.this, "video initial", Toast.LENGTH_SHORT).show();
+                videoKey = "a1b567";
+            }
+
+        });
+        return videoKey;
     }
+    */
 }

@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories:<br/>
 <img src='https://github.com/emrood/Flicks/blob/master/FliksApp1.gif' /><br/>
 <img src='https://github.com/emrood/Flicks/blob/master/FlicksApp2.gif' /><br/>
 <img src='https://github.com/emrood/Flicks/blob/master/FlicksApp3.gif' />

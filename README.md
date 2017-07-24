@@ -37,9 +37,9 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![alt text] (https://github.com/emrood/Flicks/blob/master/FliksApp1.gif)
-![alt text] (https://github.com/emrood/Flicks/blob/master/FliksApp2.gif)
-![alt text] (https://github.com/emrood/Flicks/blob/master/FliksApp3.gif)
+<img src='https://github.com/emrood/Flicks/blob/master/FliksApp1.gif' />
+<img src='https://github.com/emrood/Flicks/blob/master/FliksApp2.gif' />
+<img src='https://github.com/emrood/Flicks/blob/master/FliksApp3.gif' />
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 

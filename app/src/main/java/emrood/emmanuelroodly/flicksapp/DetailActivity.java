@@ -57,7 +57,7 @@ public class DetailActivity extends AppCompatActivity {
         tvPop.setText("Popularity: " + String.valueOf(u.getPopulaire()));
         tvOver.setText(u.getOverview());
         myRating.setRating(u.getRating() / 2);
-        Toast.makeText(DetailActivity.this, String.valueOf(myRating.getRating()), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(DetailActivity.this, String.valueOf(myRating.getRating()), Toast.LENGTH_SHORT).show();
         Picasso.with(this).load(u.getBackdropPath()).transform(new RoundedCornersTransformation(30, 30)).placeholder(R.drawable.plh).into(ivPoster);
 
 

@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     myAdapter2.notifyDataSetChanged();
                     films.addAll(Films.fromJSONArray(filmJSONResults));
                     Log.d("DEBUG", films.toString());
-                    Toast.makeText(MainActivity.this, "Connection", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "Connection", Toast.LENGTH_SHORT).show();
 
                 } catch (JSONException e) {
                     e.printStackTrace();

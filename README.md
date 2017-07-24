@@ -37,10 +37,13 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+![alt text] (https://github.com/emrood/Flicks/blob/master/FliksApp1.gif)
+![alt text] (https://github.com/emrood/Flicks/blob/master/FliksApp2.gif)
+![alt text] (https://github.com/emrood/Flicks/blob/master/FliksApp3.gif)
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with Az Screen Recorder.
 
 ## Notes
 
@@ -53,7 +56,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2017 - Noel Emmnanuel Roodly
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
